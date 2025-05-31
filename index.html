@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Swoopt Klubb / Klass Kalkylator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="app-container">
+    <!-- Header (Logo and Title) -->
+    <header>
+      <div class="logo">swoopt</div> <!-- Or <img src="swoopt_logo.png" alt="Swoopt Logo" class="logo-img"> -->
+      <h1>Klubb / Klass Kalkylator</h1>
+    </header>
+
+    <!-- Page 1: Initial Inputs -->
+    <div id="page1" class="page">
+      <div class="form-grid">
+        <label for="productSalePrice">Product sale price:</label>
+        <div class="input-group">
+          <input type="text" id="productSalePrice" class="numeric-input" value="200" readonly>
+          <span>kr</span>
+        </div>
+
+        <label for="yourMoneyPerSale">Your money per sale:</label>
+        <div class="input-group">
+          <input type="text" id="yourMoneyPerSale" class="numeric-input" value="100" readonly>
+          <span>kr</span>
+        </div>
+
+        <label for="numClubKids">Number of club kids:</label>
+        <div class="input-group">
+          <input type="text" id="numClubKids" class="numeric-input" value="50" readonly>
+        </div>
+
+        <label for="totalUnitsSold">Total units sold:</label>
+        <div class="input-group">
+          <input type="text" id="totalUnitsSold" class="numeric-input" value="250" readonly>
+        </div>
+
+        <label for="avgSalesPerKid">Average sales per kid:</label>
+        <div class="input-group">
+          <input type="text" id="avgSalesPerKid" value="5" readonly class="readonly-field">
+        </div>
+      </div>
+      <button id="nextButton" class="nav-button">NEXT</button>
+    </div>
+
+    <!-- Page 2: Sponsorship Input -->
+    <div id="page2" class="page">
+      <div class="form-grid page2-grid">
+        <label>Product sale price:</label>
+        <div class="static-info">
+          <span>FREE!</span> (then 29kr / month)
+        </div>
+
+        <label for="sponsorshipsPerKid">Sponsorships per kid:</label>
+        <div class="input-group">
+          <input type="text" id="sponsorshipsPerKid" class="numeric-input" value="30" readonly>
+        </div>
+      </div>
+      <button id="calculateButton" class="nav-button">CALCULATE</button>
+    </div>
+
+    <!-- Page 3: Graph Display -->
+    <div id="page3" class="page">
+      <div class="chart-container">
+        <canvas id="revenueChart"></canvas>
+      </div>
+      <!-- Optional: Add a "Reset" or "Back to Start" button -->
+      <!-- <button id="resetButton" class="nav-button" style="align-self: center; margin-top:10px;">START OVER</button> -->
+    </div>
+
+    <!-- Custom Number Pad -->
+    <div id="numberPad" class="number-pad-container">
+      <div class="number-pad-display-container">
+        <input type="text" id="numberPadDisplay" readonly>
+        <button id="numPadClear" class="numpad-btn special">C</button>
+      </div>
+      <div class="number-pad-grid">
+        <button class="numpad-btn">7</button> <button class="numpad-btn">8</button> <button
+          class="numpad-btn">9</button>
+        <button class="numpad-btn">4</button> <button class="numpad-btn">5</button> <button
+          class="numpad-btn">6</button>
+        <button class="numpad-btn">1</button> <button class="numpad-btn">2</button> <button
+          class="numpad-btn">3</button>
+        <button class="numpad-btn">0</button>
+        <button id="numPadBackspace" class="numpad-btn special">DEL</button>
+        <button id="numPadOk" class="numpad-btn ok">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
